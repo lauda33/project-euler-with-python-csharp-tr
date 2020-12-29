@@ -41,7 +41,6 @@ namespace problem8
                 "821663704844031998900088952434506585412275886668811642717147992444292823086346567481391912316282458617866458359124566529476545682848912883142607690042" +
                 "242190226710556263211111093705442175069416589604080719840385096245544436298123098787992724428490918884580156166097919133875499200524063689912560717606" +
                 "0588611646710940507754100225698315520005593572972571636269561882670428252483600823257530420752963450";
-            char[] _sayi = sayi.ToCharArray();
             long carpim = 1, enBüyükCarpim=1;
             //Sayımızın indisini alıyoruz. Uzunluktan 14 çıkarmamın sebebi gruplama yaparken bulunuduğum indise 13 ekleyerek grubun son indisini buluyorum bu durumda son 13 rakam tek bir grubu oluşturmuş oluyor.
             for (int i = 0; i < sayi.Length-14; i++)
@@ -53,7 +52,7 @@ namespace problem8
                     //Gruplama yaparken iki for döngüsünün değerini topluyoruz.
                     int indis = i + j;
                     //Bulunduğumuz gruptaki sayıları sırasıyla çarpıp çarpım değişkenine atıyoruz.
-                    carpim *=int.Parse(_sayi[indis].ToString()); //Direkt indis ile işlem yaptığımızda char değerini karakter koduna çevirdiği için hata alıyorduk o nedenle önce string'e ardından int'e çevirdik.
+                    carpim *=int.Parse(sayi[indis].ToString()); //Direkt indis ile işlem yaptığımızda char değerini karakter koduna çevirdiği için hata alıyorduk o nedenle önce string'e ardından int'e çevirdik.
                 }
                 //Bulduğumuz çarpımın büyüklüğünü kontrol ediyoruz
                 if (carpim > enBüyükCarpim)
